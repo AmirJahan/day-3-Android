@@ -1,22 +1,90 @@
 # Day 3 - Android (Kotlin Fundamentals)
 
-This repository contains an Android application designed to demonstrate core Kotlin programming concepts. It serves as an educational project for learning how to structure Android apps and utilize Kotlin language features.
+An educational Android application demonstrating core Kotlin programming concepts and Android development patterns.
 
-## Project Overview
+## Overview
 
-The application features a simple task management structure with Categories and Users, showcasing object-oriented programming in Kotlin.
+This project serves as a learning resource for Kotlin language features and Android app architecture, featuring a simple task management structure with Categories and Users.
 
 ## Key Concepts Covered
 
-*   **Classes & Objects**: Implementation of data models like `User`, `Task`, and `Category`.
-*   **Collections**: Usage of `ArrayList` and `HashMap` for managing data.
-*   **Companion Objects**: Utilizing `companion object` in `AppData` for static-like access to shared data.
-*   **Extension Functions**: Demonstrating how to extend functionality of existing classes (e.g., `User+myFun.kt`).
-*   **Android Components**: Basic structure with `MainActivity` and `DetailsActivity`.
+### Classes & Objects
+- Data models: `User`, `Task`, `Category`
+- Multiple constructor overloading
+- Default parameter values
 
-## Structure
+### Collections
+- `ArrayList` for task and category management
+- `HashMap` for flexible data initialization
 
-*   `com.oddinstitute.day3`: Main package containing the source code.
-    *   **Models**: `User.kt`, `Task.kt`, `Category.kt`
-    *   **Data Management**: `AppData.kt`
-    *   **Extensions**: `User+myFun.kt`, `User+other.kt`
+### Companion Objects
+- `AppData` uses companion object for static-like access
+- Global task management without instance creation
+
+### Extension Functions
+- `User+myFun.kt`: Custom functions returning Pair tuples
+- Demonstrates Kotlin's functional programming capabilities
+
+### Enums & When Expressions
+- `Direction` enum (NORTH, SOUTH, EAST, WEST, SOUTHWEST)
+- `RGB` enum with color component values
+- Pattern matching with `when` statements
+
+## Tech Stack
+
+| Component | Technology |
+|-----------|------------|
+| Language | Kotlin 1.6.10 |
+| Platform | Android API 29-32 |
+| Build | Gradle 7.0.3 |
+| UI | AndroidX, Material Design |
+
+## Project Structure
+
+```
+app/src/main/java/com/oddinstitute/day3/
+├── MainActivity.kt        # Main launcher activity
+├── DetailsActivity.kt     # Secondary activity
+├── AppData.kt             # Global data (companion object)
+├── User.kt                # User model (multiple constructors)
+├── NewUser.kt             # Nullable properties example
+├── Task.kt                # Task data class
+├── Category.kt            # Category grouping tasks
+├── Direction.kt           # Enum examples
+├── User+myFun.kt          # Extension function
+├── User+myFun2.kt         # Additional extensions
+└── User+other.kt          # More extensions
+```
+
+## User Creation Examples
+
+```kotlin
+// Multiple initialization patterns
+val user1 = User("Steve", "Blue", 235, 85f)
+val user2 = User("Sarah", "Brown")
+val user3 = User(hashMapOf("name" to "Jenny", "eyeColor" to "green"))
+val user4 = NewUser("email@example.com")
+```
+
+## Task Management
+
+```kotlin
+// Access global data via companion object
+AppData.populateTasks()
+AppData.addTask(Task("New task"))
+AppData.allTasks  // List<Category>
+```
+
+## Building
+
+```bash
+./gradlew build
+./gradlew installDebug
+```
+
+## Requirements
+
+- Android Studio
+- Android SDK 32
+- Kotlin 1.6.10
+- Device/Emulator API 29+
