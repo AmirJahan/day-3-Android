@@ -1,8 +1,6 @@
 package com.oddinstitute.day3
 
-
-class NewUser()
-{
+class NewUser() {
     val id: String = ""
     var name: String? = null
     var eyeColor: String? = null
@@ -10,20 +8,16 @@ class NewUser()
     var weight: Float? = null
     var email: String? = null
 
-
     constructor(id: String,
                 name: String? = null,
                 eyeColor: String? = null,
                 height: Int,
                 weight: Float? = null,
-                email: String? = null) : this ()
-    {
+                email: String? = null) : this() {
 
     }
 
-    constructor(email: String) : this ()
-    {
+    constructor(email: String) : this() {
 
     }
-
 }

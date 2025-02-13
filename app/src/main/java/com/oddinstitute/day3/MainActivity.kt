@@ -7,43 +7,27 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
+class MainActivity : AppCompatActivity() {
 
-class MainActivity : AppCompatActivity()
-{
-
-
-
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
 //        val myData = AppData ()
 //        myData.populateTasks()
 
-
-
         AppData.populateTasks()
 
         AppData.addTask(Task("Potato"))
-
-
-
     }
 
-
-
-
-    fun classTests ()
-    {
-
+    fun classTests() {
         // Jenny, green, 165, 58
         val jennyMap: HashMap<String, String> = hashMapOf("name" to "Jenny",
                                                          "eyeColor" to "green",
                                                          "height" to "${165}",
                                                          "weight" to "${58}")
-        val jennyHuman = User (jennyMap)
+        val jennyHuman = User(jennyMap)
 
         val test = jennyHuman.eyeColor // ?
 
@@ -59,25 +43,3 @@ class MainActivity : AppCompatActivity()
         val newuser = NewUser("sgsrg@gmail.com")
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

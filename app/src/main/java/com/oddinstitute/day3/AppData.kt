@@ -1,14 +1,11 @@
 package com.oddinstitute.day3
 
-
-class AppData
-{
-    companion object MyObject
-    {
+class AppData {
+    companion object MyObject {
         var allTasks: ArrayList<Category> = arrayListOf()
 
-        fun populateTasks()
-        { // personal
+        fun populateTasks() {
+            // personal
             val task0 = Task("Buy Bread")
             task0.isDone = true
             val task4 = Task("Clean the Room")
@@ -24,18 +21,11 @@ class AppData
             val task5 = Task("Go to the Zoo")
             val cat3 = Category("office", arrayListOf<Task>(task5))
 
-
             allTasks = arrayListOf<Category>(cat1, cat2, cat3)
         }
 
-
-        fun addTask (task: Task)
-        {
+        fun addTask(task: Task) {
             allTasks[0].tasks.add(task)
         }
-
     }
 }
-
-
-
